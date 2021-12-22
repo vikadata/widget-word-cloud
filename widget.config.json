@@ -1,0 +1,17 @@
+{
+  "packageId": "wpk1FDdCbRglm",
+  "spaceId": "spc7xZoeKhqUe",
+  "entry": "./src/index.tsx",
+  "name": {
+    "zh-CN": "wordCloud",
+    "en-US": "wordCloud"
+  },
+  "icon": "./package_icon.png",
+  "cover": "./cover.png",
+  "authorIcon": "./author_icon.png",
+  "description": {
+    "zh-CN": "wordCloud 的描述",
+    "en-US": "wordCloud description"
+  },
+  "globalPackageId": "wpk2jJ7qZS0VG"
+}
