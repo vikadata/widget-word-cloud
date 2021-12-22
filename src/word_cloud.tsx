@@ -3,7 +3,7 @@ import { useField, FieldPicker, useActiveViewId, useCloudStorage, useActiveCell,
 import ReactWordcloud from 'react-wordcloud';
 
 
-export const DanmuArr: React.FC = () => {
+export const WordCloud: React.FC = () => {
     
     const viewId = useActiveViewId();
     const [fieldId, setFieldId] = useCloudStorage<string>('selectFieldId');
