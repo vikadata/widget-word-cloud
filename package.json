@@ -30,6 +30,7 @@
     "@types/react-dom": "^16.9.8",
     "@vikadata/components": "latest",
     "@vikadata/icons": "latest",
+    "@vikadata/vika": "^1.0.5",
     "@vikadata/widget-sdk": "latest",
     "axios": "^0.24.0",
     "fs": "^0.0.1-security",
