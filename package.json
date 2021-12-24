@@ -1,5 +1,5 @@
 {
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "a vika widget",
   "engines": {
     "node": ">=8.x"
@@ -33,9 +33,13 @@
     "@vikadata/vika": "^1.0.5",
     "@vikadata/widget-sdk": "latest",
     "axios": "^0.24.0",
+    "echarts": "^5.2.2",
+    "echarts-for-react": "^3.0.2",
+    "echarts-wordcloud": "^2.0.0",
     "fs": "^0.0.1-security",
     "jquery": "^3.6.0",
     "js2wordcloud": "^1.1.12",
+    "lodash": "^4.17.21",
     "nodejieba": "^2.5.2",
     "react-wordcloud": "^1.2.7",
     "react-wordcloud2": "^0.0.3",

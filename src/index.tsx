@@ -1,15 +1,11 @@
 import React from 'react';
 import { initializeWidget } from '@vikadata/widget-sdk';
-import { Setting } from './setting';
-import { WordCloud } from './word_cloud';
+import Main from './components/main';
 
 export const HelloWorld: React.FC = () => {
   return (
-    <div style={{ display: 'flex', height: '100%' }}>
-      <div style={{ flexGrow: 1, overflow: 'auto', padding: '0 8px'}}>
-        <WordCloud />
-      </div>
-      <Setting />
+    <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%", height: "100%" }}>
+      <Main />
     </div>
   );
 };

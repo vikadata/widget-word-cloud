@@ -1,9 +1,12 @@
 import React, {useRef, useState} from 'react';
 import { useField, FieldPicker, useActiveViewId, useCloudStorage, useActiveCell, useRecord, useRecords, useDatasheet, Datasheet } from '@vikadata/widget-sdk';
-import ReactWordcloud from 'react-wordcloud';
+
+const WordCloud = require('../node_modules/wordcloud2/src/wordcloud2.js')
 
 
-export const WordCloud: React.FC = () => {
+
+
+export const Wordcloud: React.FC = () => {
     
     const viewId = useActiveViewId();
     const [fieldId, setFieldId] = useCloudStorage<string>('selectFieldId');
@@ -33,7 +36,8 @@ export const WordCloud: React.FC = () => {
     },[txtData])
 
     React.useEffect(() => {
-        console.log("此时的info:",info)       
+        console.log("此时的info:",info)    
+        WordCloud(document.getElementById('my_canvas'), { list: info, minSize: 1.5 } );   
     },[info])
 
     const GetList = () => {
@@ -55,13 +59,13 @@ export const WordCloud: React.FC = () => {
                     const fenciBvid = record.getCellValueString('fldce06mQ57K6')
                     const fenciFreq = record.getCellValueString('fldqmpvgg1c6o')
                     if (fenciBvid === word_cloud_txt){
-                        arr = [...arr, {
-                            text: record.title,
-                            value: fenciFreq
-                        }]
+                        arr = [...arr, [record.title, fenciFreq]]
                     }
                 })
-
+                // {
+                //     text: record.title,
+                //     value: fenciFreq
+                // }
                 // const arr = records.map(record => {
                     
                 //     const fenciBvid = record.getCellValueString('fldce06mQ57K6')
@@ -75,6 +79,7 @@ export const WordCloud: React.FC = () => {
                 // })
                 setInfo(arr)
                 console.log("arr:", arr)
+                
             }else{
                 console.log('未找到BV号')
             }
@@ -88,9 +93,10 @@ export const WordCloud: React.FC = () => {
         <div>
             <p>选择「BV号」字段</p>
             <FieldPicker viewId={viewId} fieldId={fieldId} onChange={option => {setFieldId(option.value)}} />        
-            <p>---------</p>
-            <ReactWordcloud words={info} />
-            
+            <hr />
+            {/* <ReactWordcloud size={[800, 800]} words={info} options={{rotations: 2, rotationAngles: [-90, 0]}}/> */}
+            <canvas id="my_canvas"/>
+            <hr />
         </div>
     );
 };
